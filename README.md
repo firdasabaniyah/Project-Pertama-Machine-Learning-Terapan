@@ -76,24 +76,50 @@ indeks objektif berat badan (kg/m^2) menggunakan rasio tinggi terhadap berat bad
 - region: daerah perumahan penerima di AS, timur laut, tenggara, barat daya, barat laut.
 - charges: Biaya medis individu ditagih oleh asuransi kesehatan
 
+Berikut beberapa tahapan visualisasi data pada data preparation:
+
+- Pertama membagi dataset kedalam 2 bentuk variable, yaitu variable untuk kolom tipe numerik dan variable kolom untuk tipe object.
+- Kemudian melakukan visualisasi distribusi categorial  dengan jumlah sampel  persentase male 676 dan female 662.
+- lalu melakukan visualisasi distribusi numerik dengan tampilan terlihat dalam file ipynb.
+- Selanjutnya visualisasi dilakukan untuk mengetahui korelasi antar fitur yg terdapat pada dataset. Terlihat pada tabel korelasi yang ditampilkan di file ipynb.
+
 
 ## Data Preparation
-* Melakukan Encoding terhadap kolom yang bertipe object
-* Data bertipe object tidak dapat diproses dalam machine learning, maka dari harus diubah dalam bentuk numerik. Ada beberapa cara melakukan encoding categorical data dengan melakukan _label encoding_ dan _one hot encoding_. _Label encoding_ mengubah setiap nilai dalam kolom menjadi angka yang berurutan.
-* _One hot encoding_ adalah teknik yang merubah setiap nilai di dalam kolom menjadi kolom baru dan mengisinya dengan nilai biner yaitu 0 dan 1. Contoh pada kolom _gender_ yang memiliki 2 nilai yaitu "Female" atau "Male".
+* Melakukan Encoding terhadap kolom yang bertipe objek.
+* Data bertipe object tidak dapat diproses dalam machine learning, maka dari itu harus diubah dalam bentuk numerik. Ada beberapa cara melakukan encoding categorical data dengan melakukan _label encoding_ dan _one hot encoding_. _Label encoding_ mengubah setiap nilai dalam kolom menjadi angka yang berurutan.
+* _One hot encoding_ adalah teknik yang merubah setiap nilai di dalam kolom menjadi kolom baru dan mengisinya dengan nilai biner yaitu 0 dan 1. Contoh pada kolom _gender_ yang memiliki 2 nilai yaitu "Female" atau "Male". Dengan melakukan mapping terhadap kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. 
+* Melakukan perhitungan jumlah baris terhadap kolom target.
 * Melakukan pembagian dataset dengan 80% untuk data latih dan 20% untuk data uji. Setelah melakukan pra-pemrosesan ke dataset, selanjutnya adalah membagi dataset untuk data latih dan data uji dengan rasio 80:20. Data latih adalah data yang hanya untuk melatih model, sedangkan data uji adalah data yang hanya sebagai uji coba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
 * Melakukan standardisasi data pada semua fitur data. Tahapp terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1.
 
 
 ## Modeling
 - Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah _modeling_ terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan adanya tambahan parameter. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya.
-- Pada model dengan algoritma Random Forest memiliki nilai akurasi, _f1-score_, _recall_ dan _precision_ lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix seperti berikut. 
-- Dengan hasil diatas, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan.
+- Pada model dengan algoritma Random Forest memiliki nilai akurasi, _f1-score_, _recall_ dan _precision_ lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix.
+- Confussion Matrix algoritma Random Forest: pada algoritma tersebut menjelaskan bahwa bagian atas kiri merepresentasikan TN (True negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
+- Confussion Matrix algoritma K-Nearest Neighbor: pada penjelasan algoritma K-NN tidak jauh berbeda dengan algoritma random forest dimana bagian atas kiri merepresentasikan TN (True Negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
+- Dengan hasil tersebut, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan.
 
 
 
 ## Evaluation
 Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunakan metriks akurasi, _f1-score_, _recall_ dan _precision_. 
+
+Akurasi merupakan metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar. Rumus akurasi sebagai berikut: 
+Akurasi = (TP + TN)/(TP + FP + FN + TN)
+
+Keterangan :
+True Positive (TP): Kasus dimana model merupakan data positif yang diprediksi benar.
+True Negative (TN): Kasus dimana model merupakan data negatif yang diprediksi benar. 
+False Positive (FP) - Type I Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif.
+False Negative (FN) - Type II Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. 
+
+Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. Rumus precision sebagai berikut: 
+Precission = (TP)/(TP + FP)
+Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Rumus precision sebagai berikut: 
+Recall = (TP)/(TP + FN)
+f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. Rumus f1-score sebagai berikut: 
+F1 Score = 2* (Recall*Precission)/(Recall+Precission)
 
 **Referensi**
 
