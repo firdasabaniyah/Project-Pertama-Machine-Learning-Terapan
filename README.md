@@ -109,16 +109,28 @@ Akurasi merupakan metrik untuk menghitung persentase dari total data yang diiden
 Akurasi = (TP + TN)/(TP + FP + FN + TN)
 
 Keterangan :
+
 True Positive (TP): Kasus dimana model merupakan data positif yang diprediksi benar.
+
 True Negative (TN): Kasus dimana model merupakan data negatif yang diprediksi benar. 
+
 False Positive (FP) - Type I Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif.
+
 False Negative (FN) - Type II Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. 
 
-Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. Rumus precision sebagai berikut: 
+Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. 
+Rumus precision sebagai berikut: 
+
 Precission = (TP)/(TP + FP)
-Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Rumus precision sebagai berikut: 
+
+Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. 
+Rumus precision sebagai berikut: 
+
 Recall = (TP)/(TP + FN)
-f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. Rumus f1-score sebagai berikut: 
+
+f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. 
+Rumus f1-score sebagai berikut: 
+
 F1 Score = 2* (Recall*Precission)/(Recall+Precission)
 
 **Referensi**
