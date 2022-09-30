@@ -4,7 +4,7 @@
 
 Domain proyek yang dipilih dalam proyek machine learning ini mengenai kesehatan dengan judul "Prediksi Harga Asuransi Kesehatan".
 
-* #####  Latar Belakang 
+##### Latar Belakang 
 
 ![menentukan-plan-asuransi-kesehatan](https://user-images.githubusercontent.com/111235408/193184803-c674ebd8-ddd1-4760-ba38-799fbddf27fc.jpeg)
 
@@ -13,7 +13,7 @@ Asuransi kesehatan merupakan suatu instrumen sosial untuk menjamin bahwa seseora
 
 Sebab dewasa ini, kesehatan adalah hal terpenting dan paling berharga. Namun ketahuilah bahwasanya, biaya medis akan terus mengalami kenaikan seiring dengan berjalannya waktu. Oleh karenanya, setiap orang perlu antisipasi hal tersebut dengan mengetahui prediksi harga asuransi kesehatan. Untuk itu penggunaan machine learning dalam melakukan prediksi serta dengan menggunakan model regresi linear sangat dibutuhkan untuk dijadikan sebagai solusi dalam pemecahan masalah. Projek ini mengimplementasikan prediksi biaya asuransi kesehatan dengan dipengaruhi dari berbagai faktor seperti umur, jenis kelamin, bmi (kategori berat badan), banyaknya anak, apakah seorang perokok atau bukan serta wilayah dan yang paling utama yaitu harga/biaya.
 
-#####**Rubrik/Kriteria Tambahan**:
+##### **Rubrik/Kriteria Tambahan:**
 - Salah satu masalah yang sering dihadapi oleh penduduk dalam mengakses layanan kesehatan adalah hambatan finansial. Untuk itu dibutuhkan sistem pembiayaan kesehatan yang mampu menghilangkan hambatan tersebut dan menjangkau seluruh penduduk. Karenaya prediksi harga asuransi memiliki manfaat dengan memberikan solusi finansial ketika tertanggung mengalami risiko medis. Asuransi kesehatan penting karena risiko sakit bisa menimpa siapa saja, baik usia muda ataupun tua.
 - Menurut data dari jurnal menyatakan bahwa secara keseluruhan penduduk yang tidak memiliki jaminan kesehatan mempunyai probabilitas mengalami gangguan kesehatan (selama sebulan terakhir) lebih tinggi dibandingkan dengan penduduk yang memiliki jaminan kesehatan. Hal itu terlihat dari tahun 1995 maupun 1998. Pada penduduk yang memiliki jaminan kesehatan, 272 dari 1.000 orang (tahun 1998) mengalami gangguan kesehatan, sementara pada penduduk yang tidak mempunyai jaminan kesehatan jumlah tersebut lebih besar yaitu 281 per 1.000 orang. 
   
@@ -38,7 +38,7 @@ Berdasarkan latar belakang yang telah dijelaskan diatas, berikut ini rumusan mas
 * Menentukan model yang tepat untuk digunakan dalam menyelesaikan kasus prediksi Harga Asuransi Kesehatan.
 * Membuat model _machine learning_ dengan nilai akurasi yang mencapai 90%.
 
-#####**Rubrik/Kriteria Tambahan**:
+##### **Rubrik/Kriteria Tambahan**:
 
 #### Solution Statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
@@ -85,7 +85,7 @@ indeks objektif berat badan (kg/m^2) menggunakan rasio tinggi terhadap berat bad
 - region: daerah perumahan penerima di AS, timur laut, tenggara, barat daya, barat laut.
 - charges: Biaya medis individu ditagih oleh asuransi kesehatan.
 
-**Rubrik/Kriteria Tambahan**:
+##### **Rubrik/Kriteria Tambahan**:
 
 - Exploratory data analysis
 Exploratory data analysis atau sering disingkat EDA merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi. [[5]](https://www.dicoding.com/academies/319/tutorials/17008)
@@ -153,7 +153,7 @@ Berikut beberapa tahapan visualisasi data pada data preparation:
 * Melakukan Encoding terhadap kolom yang bertipe objek.
 * Data bertipe object tidak dapat diproses dalam machine learning, maka dari itu harus diubah dalam bentuk numerik. Ada beberapa cara melakukan encoding categorical data dengan melakukan _label encoding_ dan _one hot encoding_. _Label encoding_ mengubah setiap nilai dalam kolom menjadi angka yang berurutan.
 * Proses Reduksi Dimensi dengan PCA dapat dilakukan dengan teknik reduksi (pengurangan) dimensi atau prosedur yang mengurangi jumlah fitur dengan tetap mempertahankan informasi pada data. Dengan menggunakan Principal Component Analysis atau PCA. PCA bekerja menggunakan metode aljabar linier. Ia mengasumsikan bahwa sekumpulan data pada arah dengan varians terbesar merupakan yang paling penting (utama). 
-Dalam kode memanggil class PCA() dari library sciikit-learn. Paremeter yang dimasukkan ke dalam class adalah n_components dan random_state. Parameter n_components merupakan jumlah komponen atau dimensi, dalam kasus kita jumlahnya ada 3, yaitu 'children', 'age', dan 'bmi'. Sedangkan, parameter random_state berfungsi untuk mengontrol random number generator yang digunakan. Menentukan parameter random_state bertujuan untuk dapat memastikan bahwa hasil pembagian dataset konsisten dan memberikan data yang sama setiap kali model dijalankan. [[6]](https://www.dicoding.com/academies/319/tutorials/18575)
+Dalam kode memanggil class PCA() dari library sciikit-learn. Paremeter yang dimasukkan ke dalam class adalah n_components dan random_state. Parameter n_components merupakan jumlah komponen atau dimensi, dalam kasus kita jumlahnya ada 3, yaitu children, age, dan bmi. Sedangkan, parameter random_state berfungsi untuk mengontrol random number generator yang digunakan. Menentukan parameter random_state bertujuan untuk dapat memastikan bahwa hasil pembagian dataset konsisten dan memberikan data yang sama setiap kali model dijalankan. [[6]](https://www.dicoding.com/academies/319/tutorials/18575)
 * _One hot encoding_ adalah teknik yang merubah setiap nilai di dalam kolom menjadi kolom baru dan mengisinya dengan nilai biner yaitu 0 dan 1. Contoh pada kolom _gender_ yang memiliki 2 nilai yaitu "Female" atau "Male". Dengan melakukan mapping terhadap kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. 
 * Melakukan perhitungan jumlah baris terhadap kolom target.
 * Melakukan pembagian dataset dengan 80% untuk data latih dan 20% untuk data uji. Setelah melakukan pra-pemrosesan ke dataset, selanjutnya adalah membagi dataset untuk data latih dan data uji dengan rasio 80:20. Data latih adalah data yang hanya untuk melatih model, sedangkan data uji adalah data yang hanya sebagai uji coba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
@@ -187,35 +187,31 @@ Berikut merupakan parameter-parameter yang digunakan pada potongan kode di atas.
 
 
 ## Evaluation
-Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dengan metrik yang akan Saya gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. 
+Pada proyek ini, metrik yang akan Saya gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. 
 
-Akurasi merupakan metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar. Rumus akurasi sebagai berikut: 
-Akurasi = (TP + TN)/(TP + FP + FN + TN)
+Dengan rumus penyelesaian :
+![gambar 2](https://user-images.githubusercontent.com/111235408/193244772-a218c80c-ba86-4bfb-b5e9-3d3e5d4d44da.png)
 
 Keterangan :
 
-True Positive (TP): Kasus dimana model merupakan data positif yang diprediksi benar.
+N = jumlah dataset
 
-True Negative (TN): Kasus dimana model merupakan data negatif yang diprediksi benar. 
+yi = nilai sebenarnya
 
-False Positive (FP) - Type I Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif.
+y_pred = nilai prediksi
 
-False Negative (FN) - Type II Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. 
+Namun, sebelum menghitung nilai MSE dalam model, Saya melakukan proses scaling fitur numerik pada data uji terlebih dulu. Selanjutnya, Saya dapat mengevaluasi ketiga model dengan metrik MSE. Saat menghitung nilai Mean Squared Error pada data train dan test, Saya membaginya dengan nilai 1e3. Hal ini bertujuan agar nilai mse berada dalam skala yang tidak terlalu besar.
 
-Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. 
-Rumus precision sebagai berikut: 
+Dengan hasil perhitungan sebagai berikut :
+|  | train | test | 
+| ------------ |---------------| ---------------| 
+| KNN | 47179.514392 | 50241.517842 |
+| RF | 10232.997408 | 43768.417466 | 
+| Boosting | 48200.12633 | 46166.39224 | 
 
-Precission = (TP)/(TP + FP)
+![gambar 3](https://user-images.githubusercontent.com/111235408/193245819-5f56e140-e386-44d0-b9c1-23fda2c7d3a5.png)
 
-Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. 
-Rumus precision sebagai berikut: 
-
-Recall = (TP)/(TP + FN)
-
-f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. 
-Rumus f1-score sebagai berikut: 
-
-F1 Score = 2* (Recall*Precission)/(Recall+Precission)
+Dari gambar di atas, terlihat bahwa, model Random Forest (RF) memberikan nilai eror yang paling kecil. Sedangkan model dengan KNN memiliki eror yang paling besar (berdasarkan grafik, angkanya di atas 800). Model inilah yang akan Saya pilih sebagai model terbaik untuk melakukan prediksi Harga Asuransi Kesehatan.
 
 **Referensi**
 
@@ -223,3 +219,8 @@ F1 Score = 2* (Recall*Precission)/(Recall+Precission)
  [[2]](https://eprints.umm.ac.id/39299/)
  [[3]](https://publikasi.dinus.ac.id/index.php/jais/article/view/1189/)
  [[4]](https://simdos.unud.ac.id/uploads/file_penelitian_1_dir/721bdb509a6f0bb9ccca6d7374b86759.pdf)
+ [[5]](https://www.dicoding.com/academies/319/tutorials/17008)
+ [[6]](https://www.dicoding.com/academies/319/tutorials/18575)
+ [[7]](https://www.dicoding.com/academies/319/tutorials/18575)
+ 
+ 
